@@ -5,8 +5,12 @@ class Car {
         this.driver = driver;
         this.passenger ;
     }
-    printDataCar () {
-        console.log(this.driver, this.driver.name, this.driver.document)
-    }
+
+    printDataCar(){
+       console.log(this.license);
+       console.log(this.driver);
+       console.log(this.driver.name);
+       console.log(this.driver.document);
+   }
 }
 
