@@ -1,16 +1,59 @@
+function videoPlay(id){
+  const urlSecreta = "https://platzisecreto.com/"+id
+  console.log("Se esta reproducionedo desde la url "+urlSecreta)
+}
+
+function videoStop(id){
+  const urlSecreta = "https://platzisecreto.com/"+id
+  console.log("Pausamos la url "+urlSecreta)
+}
+
+export class PlatziClass {
+  constructor({
+    name, 
+    videoID,
+  }){
+    this.name = name;
+    this.videoID = videoID;
+  }
+
+  reproducir(){
+    videoPlay(this.videoID);
+  }
+
+  pausar(){
+    videoStop(this.videoID);
+  }
+}
+
 class Course {
     constructor({
       name,
       classes = [],
     }) {
-      this.name = name;
+      this._name = name;
       this.classes = classes;
     }
+    get name(){
+      return this._name
+    }
+
+    set name(nuevoNombre) {
+      if (nuevoNombre === "Curso malito de Programación Básica"){
+        console.error("Web no")
+      } else {
+      this._name = nuevoNombre;
+    }}
   }
   
+  
+
   const cursoProgBasica = new Course({
     name: "Curso Gratis de Programación Básica",
   });
+
+  cursoProgBasica.name = "curso"
+
   const cursoDefinitivoHTML = new Course({
     name: "Curso Definitivo de HTML y CSS",
   });
